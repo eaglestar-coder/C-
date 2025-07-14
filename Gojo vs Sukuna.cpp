@@ -196,7 +196,7 @@ void launchHollowPurple(Sukuna &target, bool &infinityActive) {
                 cursedenergy += energyPerTick;
             }
         }
-        cout << "Recharge complete." << endl << endl;
+        cout << "Recharge complete." << endl;
     }
 
     void regenerate() {
@@ -374,7 +374,7 @@ void Sukuna::recharge(int ticks, int energyPerTick) {
                 cursedenergy += energyPerTick;
             }
         }
-        cout << "Recharge complete." << endl << endl;
+        cout << "Recharge complete." << endl;
     }
 
 
@@ -418,8 +418,8 @@ void Sukuna::launchRandomAttack(Gojo &target, int &dotRef, bool &gojousedDomain,
 
 int main() {
     srand(time(0));
-    Gojo Satoru(2000, 4000, 850, 850);
-    Sukuna Ryomen(2000, 4000, 850, 850);
+    Gojo Satoru(4000, 4000, 850, 850);
+    Sukuna Ryomen(4000, 4000, 850, 850);
     int gojoDoTturns = 0, turn = 1;
     bool gojousedDomain = false, sukunausedDomain = false;
     int gojodomainlevel = 0, sukunadomainlevel = 0;
