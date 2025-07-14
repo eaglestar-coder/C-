@@ -23,7 +23,8 @@ public:
         }
         health -= dmg;
         if (health < 0) health = 0;
-        cout << "Remaining HP: " << health << endl;
+        cout << "Sukuna took " << dmg << " damage" << endl;
+        cout << "Sukuna's Remaining HP: " << health << endl;
     }
 
     void stun(int limit) {
@@ -80,7 +81,8 @@ public:
         }
         health -= dmg;
         if (health < 0) health = 0;
-        cout << "Remaining HP: " << health << endl;
+        cout << "Gojo took " << dmg << " damage" << endl;
+        cout << "Gojo's: Remaining HP: " << health << endl;
         return true;
     }
 
@@ -97,12 +99,12 @@ public:
 		}
 		health -=dmg;
 		if (health < 0) health = 0;
-		cout << "Infinity Bypassed! Remaining HP: "<<health<<endl;
+		cout << "Infinity Bypassed! Gojo's Remaining HP: "<<health<<endl;
 	}
 
     void attack(Sukuna &target) {
-        target.takedamage(50);
         cout << "Gojo Attacks Sukuna!" << endl;
+        target.takedamage(50);
         if (rand() % 10 == 0) {
             cout << "Black Flash" << endl;
             target.takedamage(150);
@@ -258,8 +260,8 @@ void Sukuna::attack(Gojo &target, bool &sukunausedDomain) {
         return;
     }
 
-    bool hit = target.takedamage(50, sukunausedDomain);
     cout << "Sukuna Attacks Gojo!" << endl;
+    bool hit = target.takedamage(50, sukunausedDomain);
 
     if (!hit && target.infinityActive && !sukunausedDomain && !target.evasionDisabled) {
         failedattacksongojo++;
@@ -470,7 +472,7 @@ int main() {
 				cout << "Simple Domain crushes underneath Malevolent Shrine" << endl;
 			}
 		}
-
+		
         cout << "\nGojo's Turn:" << endl;
         Satoru.launchRandomAttack(Ryomen, gojousedDomain, gojodomainlevel, sukunausedDomain, sukunadomainlevel);
         if (Ryomen.health <= 0) {
@@ -484,18 +486,19 @@ int main() {
             cout << "Gojo has been defeated!" << endl;
             break;
         }
-
-	        if (Satoru.skillimit == 0 && gojousedDomain) {
+        
+        
+        if (Satoru.skillimit == 0 && gojousedDomain) {
 		gojousedDomain = false;
 		gojodomainlevel = 0;
 		cout << "Unlimited Void fades..." << endl;
-  }
+}
 
 		if (Ryomen.skillimit == 0 && sukunausedDomain) {
 		sukunausedDomain = false;
 		sukunadomainlevel = 0;
 		cout << "Malevolent Shrine fades..." << endl;
-     }	
+   }	
 
         turn++;
     }
