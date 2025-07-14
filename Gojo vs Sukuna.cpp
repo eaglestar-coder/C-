@@ -485,6 +485,18 @@ int main() {
             break;
         }
 
+	        if (Satoru.skillimit == 0 && gojousedDomain) {
+		gojousedDomain = false;
+		gojodomainlevel = 0;
+		cout << "Unlimited Void fades..." << endl;
+  }
+
+		if (Ryomen.skillimit == 0 && sukunausedDomain) {
+		sukunausedDomain = false;
+		sukunadomainlevel = 0;
+		cout << "Malevolent Shrine fades..." << endl;
+     }	
+
         turn++;
     }
 
